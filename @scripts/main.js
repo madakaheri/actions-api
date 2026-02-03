@@ -1,7 +1,7 @@
 import process from 'node:process';
 import {actionApiType, sdkConfig} from '../config.js';
 
-const [_node, _file, command, ...options] = process.argv;
+const [_node, _file, command, ..._options] = process.argv;
 
 const info = `
 ---------------------------------------

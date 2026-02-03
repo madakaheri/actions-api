@@ -6,7 +6,9 @@
     "create-actions-api": "src/main.js"
   },
   "scripts": {
-    "test": "node --test",
+    "lint": "xo",
+    "format": "xo --fix",
+    "test": "xo && node --test",
     "api:publish": "node @scripts/main.js api-publish"
   },
   "keywords": [],

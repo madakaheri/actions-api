@@ -6,6 +6,4 @@
  * @param {string} params.rootPath
  * @returns {Promise<void>}
  */
-export async function makeUtils({type, rootPath}) {
-	const utilsPath = `${rootPath}/src/utils`;
-}
+export async function makeUtils({type: _type, rootPath: _rootPath}) {}

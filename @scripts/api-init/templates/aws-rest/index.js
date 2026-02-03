@@ -1,4 +1,4 @@
-import {auth} from './utils/auth/index.js';
+import {auth} from './utils/auth.js';
 import {router} from './utils/router/index.js';
 
 /**

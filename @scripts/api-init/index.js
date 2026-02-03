@@ -1,4 +1,8 @@
-import fs from 'node:fs/promises';
+import path from 'node:path';
+import {ensureEmptyRoot} from './steps/ensure-empty-root.js';
+import {makeSrcDirectory} from './steps/make-src-directory.js';
+import {copyTemplate} from './steps/copy-template.js';
+import {ensureActionsDirectory} from './steps/ensure-actions-directory.js';
 
 /**
  * APIディレクトリを生成します。
@@ -8,12 +12,10 @@ import fs from 'node:fs/promises';
  * @returns {Promise<void>}
  */
 export async function apiInit({actionApiType, rootPath}) {
-	// 1. rootPath に api ディレクトリがあれば Abort
+	await ensureEmptyRoot(rootPath);
 
-	// 2. ディレクトリ作成
-	const srcPath = `${rootPath}/src/`;
-	await fs.mkdir(srcPath, {recursive: true});
-
-	// 3. テンプレートをコピー
-	const templateDirectory = new URL(`templates/${actionApiType}/`, import.meta.url).pathname;
+	const srcPath = path.join(rootPath, 'src');
+	await makeSrcDirectory(srcPath);
+	await copyTemplate({actionApiType, srcPath});
+	await ensureActionsDirectory(srcPath);
 }
