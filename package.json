@@ -9,7 +9,7 @@
     "lint": "xo",
     "format": "xo --fix",
     "test": "xo && node --test",
-    "api:publish": "node @scripts/main.js api-publish"
+    "sdk:update": "node @scripts/main.js sdk-update"
   },
   "keywords": [],
   "author": "MadakaHeri",

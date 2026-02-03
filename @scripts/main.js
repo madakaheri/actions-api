@@ -35,15 +35,15 @@ Actions API Scripts
 Usage: node @scripts/main.js <command>
 
 Commands:
-	api-publish        Generate SDK Actions from API Actions and update existing SDK
+	sdk-update         Generate SDK Actions from API Actions and update existing SDK
 	api-init           Initialize API directory
 	sdk-init           Initialize SDK directory
 `;
 
 switch (command) {
-	case 'api-publish': {
-		const {apiPublish} = await import('./api-publish/index.js');
-		await apiPublish({
+	case 'sdk-update': {
+		const {sdkUpdate} = await import('./sdk-update/index.js');
+		await sdkUpdate({
 			srcPath: sdkConfig.srcPath,
 			outPath: sdkConfig.outPath,
 		});

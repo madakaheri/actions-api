@@ -12,7 +12,7 @@ import {publishSdkActionsIndex} from './steps/publish-sdk-actions-index.js';
  * @param {string} params.outPath
  * @returns {Promise<void>}
  */
-export async function apiPublish({srcPath, outPath}) {
+export async function sdkUpdate({srcPath, outPath}) {
 	// API Actions 群を解析して SDK Actions コードを生成
 	const actionNames = await searchActionNames(srcPath);
 	await clearSdkActions(outPath);
@@ -43,5 +43,5 @@ export async function apiPublish({srcPath, outPath}) {
 		actionNames,
 	});
 
-	console.info('\n✅ SDK Actions have been published successfully!\n');
+	console.info('\n✅ SDK Actions have been updated successfully!\n');
 }

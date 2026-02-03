@@ -1,5 +1,5 @@
 {
-	"actionApiType": "aws-lambda",
+	"actionApiType": "aws-rest",
 	"apiPath": "test-repo/api",
 	"sdkConfig": {
 		"rootPath": "test-repo/sdk",
