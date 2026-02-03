@@ -1,8 +1,9 @@
-import {getAction} from './actions/get-action.js';
-import {parseBody} from './actions/parse-body.js';
+import {getAction} from './steps/get-action.js';
+import {parseBody} from './steps/parse-body.js';
 // import {env} from '../config.js';
 
 /**
+ * アクションルーター(HTTP版)
  * @param {import('aws-lambda').APIGatewayProxyEvent} event
  * @returns {Promise<import('aws-lambda').APIGatewayProxyResultV2>}
  */
