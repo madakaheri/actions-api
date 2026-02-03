@@ -12,3 +12,9 @@ export const sdkConfig = {
 	srcPath: new URL('test-repo/api/src/actions', import.meta.url).pathname,
 	outPath: new URL('test-repo/sdk/src/actions', import.meta.url).pathname,
 };
+
+/**
+ * API ルートパス
+ * @type {string}
+ */
+export const apiPath = new URL('test-repo/api', import.meta.url).pathname;

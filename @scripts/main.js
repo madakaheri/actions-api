@@ -1,5 +1,5 @@
 import process from 'node:process';
-import {actionApiType, sdkConfig} from '../config.js';
+import {actionApiType, apiPath, sdkConfig} from '../config.js';
 
 const [_node, _file, command, ..._options] = process.argv;
 
@@ -33,7 +33,7 @@ switch (command) {
 		const {apiInit} = await import('./api-init/index.js');
 		await apiInit({
 			actionApiType,
-			rootPath: sdkConfig.rootPath,
+			rootPath: apiPath,
 		});
 		break;
 	}
