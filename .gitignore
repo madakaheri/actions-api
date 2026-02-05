@@ -131,3 +131,9 @@ dist
 
 # Mac
 .DS_Store
+
+# Template-specific: node_modules and lock files in subdirectories
+api/node_modules/
+api/package-lock.json
+sdk/node_modules/
+sdk/package-lock.json
