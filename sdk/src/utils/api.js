@@ -22,7 +22,7 @@ class AwsRestApiConnector {
 
 /**
  * 注意事項:
- * - 使用の前に ```Aplify.configure()``` で初期設定する必要があります。
+ * - 使用の前に ```Amplify.configure()``` で初期設定する必要があります。
  */
 export const api = new AwsRestApiConnector();
 export default api;
