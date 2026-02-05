@@ -12,9 +12,6 @@
 	"keywords": ["actions-api", "aws-lambda", "serverless"],
 	"author": "",
 	"license": "ISC",
-	"dependencies": {
-		"@trusquetta/aws-cognito": "^1.0.0"
-	},
 	"devDependencies": {
 		"xo": "^0.60.0",
 		"@types/aws-lambda": "^8.10.0"
