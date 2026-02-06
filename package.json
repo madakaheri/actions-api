@@ -9,7 +9,8 @@
     "lint": "xo",
     "format": "xo --fix",
     "test": "xo && node --test",
-    "sdk:update": "node src/main.js sdk-update"
+    "actions-api:init": "node src/main.js init",
+    "actions-api:build": "node src/main.js sdk-update"
   },
   "keywords": [],
   "author": "MadakaHeri",
@@ -26,6 +27,15 @@
   "xo": {
     "rules": {
       "capitalized-comments": "off"
+    }
+  },
+  "actions-api": {
+    "actionApiType": "aws-rest",
+    "apiPath": "test-repo/api",
+    "sdkConfig": {
+      "rootPath": "test-repo/sdk",
+      "srcPath": "test-repo/api/src/actions",
+      "outPath": "test-repo/sdk/src/actions"
     }
   }
 }

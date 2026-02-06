@@ -1,29 +1,9 @@
-import fs from 'node:fs/promises';
 import process from 'node:process';
-
-/**
- * 設定ファイルを読み込みます。
- * @returns {Promise<{actionApiType: ActionApiType, apiPath: string, sdkConfig: {rootPath: string, srcPath: string, outPath: string}}>}
- */
-async function loadConfig() {
-	const configFile = new URL('../config.json', import.meta.url);
-	const rawConfig = JSON.parse(await fs.readFile(configFile, 'utf8'));
-	const configDirectory = new URL('./', configFile);
-	const resolvePath = value => new URL(value, configDirectory).pathname;
-	return {
-		actionApiType: rawConfig.actionApiType,
-		apiPath: resolvePath(rawConfig.apiPath),
-		sdkConfig: {
-			rootPath: resolvePath(rawConfig.sdkConfig.rootPath),
-			srcPath: resolvePath(rawConfig.sdkConfig.srcPath),
-			outPath: resolvePath(rawConfig.sdkConfig.outPath),
-		},
-	};
-}
+import {loadConfig} from './utils/load-config.js';
 
 const [_node, _file, command, ..._options] = process.argv;
-const {actionApiType, apiPath, sdkConfig} = await loadConfig();
-
+const projectPath = new URL('../', import.meta.url).pathname;
+const {actionApiType, apiPath, sdkConfig} = await loadConfig(projectPath);
 const info = `
 ---------------------------------------
 
