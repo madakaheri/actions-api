@@ -30,7 +30,7 @@
     }
   },
   "actions-api": {
-    "actionApiType": "aws-rest",
+    "actionApiType": "aws-lambda",
     "apiPath": "test-repo/api",
     "sdkConfig": {
       "rootPath": "test-repo/sdk",
