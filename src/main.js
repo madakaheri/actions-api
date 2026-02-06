@@ -3,14 +3,14 @@ import {loadConfig} from './utils/load-config.js';
 
 const [_node, _file, command, ..._options] = process.argv;
 const projectPath = new URL('../', import.meta.url).pathname;
-const {actionApiType, apiPath, sdkConfig} = await loadConfig(projectPath);
+const config = await loadConfig(projectPath);
+const {actionApiType, apiPath, sdkConfig} = config;
 const info = `
 ---------------------------------------
 
 Actions API Scripts
 
 ---------------------------------------
-
 
 Usage: node src/main.js <command>
 
@@ -20,6 +20,8 @@ Commands:
 	sdk-init           Initialize SDK directory
 	sdk-update         Generate SDK Actions from API Actions and update existing SDK
 `;
+
+console.info(`Current Environment: ${config}`);
 
 switch (command) {
 	case 'init': {
